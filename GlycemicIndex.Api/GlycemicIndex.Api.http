@@ -1,0 +1,6 @@
+@GlycemicIndex.Api_HostAddress = http://localhost:5286
+
+GET {{GlycemicIndex.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
