@@ -12,4 +12,3 @@ public class HealthCheckController : ControllerBase
         return Ok(new { status = "healthy", timestamp = DateTime.UtcNow });
     }
 }
-
