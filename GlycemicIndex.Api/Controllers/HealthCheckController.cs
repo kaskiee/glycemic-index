@@ -1,3 +1,4 @@
+using GlycemicIndex.Infrastructure;
 using Microsoft.AspNetCore.Mvc;
 
 namespace GlycemicIndex.Api.Controllers;
@@ -7,8 +8,9 @@ namespace GlycemicIndex.Api.Controllers;
 public class HealthCheckController : ControllerBase
 {
     [HttpGet("ping")]
-    public IActionResult Ping()
+    public IActionResult Ping(DbContextGI dbcontext)
     {
-        return Ok(new { status = "healthy", timestamp = DateTime.UtcNow });
+        var result = dbcontext.Database.CanConnect();
+        return Ok(new { status = "healthy", timestamp = DateTime.UtcNow, db = result });
     }
 }
