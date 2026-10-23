@@ -11,7 +11,6 @@ public static class HealthCheckEndpoints
                 var result = dbContext.Database.CanConnect();
                 return Results.Ok(new { status = "healthy", timestamp = DateTime.UtcNow, db = result });
             })
-            .WithName("HealthCheckPing")
-            .WithOpenApi();
+            .WithName("HealthCheckPing");
     }
 }
