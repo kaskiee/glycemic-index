@@ -11,6 +11,9 @@
 *.sln.docstates
 *.env
 
+# Local developer secrets - never committed (real DB credentials go here instead of appsettings.json)
+**/appsettings.Development.json
+
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
 
