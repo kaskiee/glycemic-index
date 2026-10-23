@@ -1,2 +1,6 @@
 [tools]
 dotnet = "10"
+
+[tasks.db-up]
+description = "Start db containers"
+run="docker compose --profile db up -d"

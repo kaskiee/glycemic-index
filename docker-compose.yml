@@ -1,6 +1,7 @@
 services:
   postgres:
     image: postgres:16
+    profiles: [db]
     container_name: glycemic_postgres
     restart: unless-stopped
     environment:
@@ -16,6 +17,7 @@ services:
 
   pgadmin:
     image: dpage/pgadmin4:latest
+    profiles: [db]
     container_name: glycemic_pgadmin
     restart: unless-stopped
     depends_on:
