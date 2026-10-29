@@ -1,6 +1,15 @@
 using GlycemicIndex.Application;
+using GlycemicIndex.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 
 namespace GlycemicIndex.Infrastructure;
 
-public class DbContextGI(DbContextOptions<DbContextGI> options) : DbContext(options), IDbContextGI;
+public class DbContextGI(DbContextOptions<DbContextGI> options) : DbContext(options), IDbContextGI
+{
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        modelBuilder.ApplyConfigurationsFromAssembly(typeof(DbContextGI).Assembly);
+    }
+    
+    public DbSet<MealCategory> MealCategories { get; set; }
+}
