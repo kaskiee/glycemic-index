@@ -21,5 +21,6 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 
 app.MapHealthCheckEndpoints();
+app.MapMealCategoriesEndpoints();
 
 app.Run();
