@@ -12,4 +12,5 @@ public class DbContextGI(DbContextOptions<DbContextGI> options) : DbContext(opti
     }
     
     public DbSet<MealCategory> MealCategories { get; set; }
+    public DbSet<FoodProduct> FoodProducts { get; set; }
 }
