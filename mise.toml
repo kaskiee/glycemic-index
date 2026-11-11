@@ -4,3 +4,12 @@ dotnet = "10"
 [tasks.db-up]
 description = "Start db containers"
 run="docker compose --profile db up -d"
+
+[tasks.migration-add]
+description = "Add new EF migration"
+run = "dotnet ef migrations add --project GlycemicIndex.Infrastructure --startup-project GlycemicIndex.Api"
+
+[tasks.migration-apply]
+description = "Apply EF migrations to the database"
+depends = ["db-up"]
+run = "dotnet ef database update --project GlycemicIndex.Infrastructure --startup-project GlycemicIndex.Api"
