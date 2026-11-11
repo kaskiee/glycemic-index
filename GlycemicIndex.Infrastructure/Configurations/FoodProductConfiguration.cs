@@ -38,7 +38,7 @@ public class FoodProductConfiguration : IEntityTypeConfiguration<FoodProduct>
         {
             t.HasCheckConstraint("CK_FoodProducts_GlycemicIndex_Range", "\"GlycemicIndex\" BETWEEN 0 AND 100");
             t.HasCheckConstraint("CK_FoodProducts_Nutrition_NonNegative",
-                "\"CaloriesPer100g\" >= 0 AND \"ProteinPer100g\" >= 0 AND \"CarbsPer100g\" >= 0 AND \"FatPer100g\" >= 0");
+                "\"CaloriesPer100g\" >= 0 AND \"ProteinPer100g\" >= 0 AND \"CarbsPer100g\" >= 0 AND \"FatPer100g\" >= 0 AND \"FiberPer100g\" >= 0");
         });
     }
 }
